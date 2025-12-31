@@ -10,9 +10,9 @@ return {
 					vertical_line = "│",
 					left_top = "┌",
 					left_bottom = "└",
-					right_arrow = ">",
+					right_arrow = "─",
 				},
-				style = "#495162",
+				style = "#434852",
 			},
 		})
 	end,
