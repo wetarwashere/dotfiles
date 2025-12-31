@@ -1,5 +1,5 @@
 # Introducing my rice
-Wetar's rice, yeah that's me. This is just my personal rice, i use this everyday
+Just my everyday's linux rice
 
 # Installation
-Just execute the `setup.sh` bash script and this thing will hopefully install itself into your device 
+The script is still not that perfect yet. Run it with your own risk
