@@ -31,6 +31,8 @@ return {
 					cs = { "clang-format" },
 					python = { "black" },
 					rust = { "rustfmt" },
+					asm = { "asmfmt" },
+					nasm = { "asmfmt" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
@@ -38,7 +40,7 @@ return {
 				},
 				formatters = {
 					["php-cs-fixer"] = {
-						command = "php-cs-fixer",
+						command = "$HOME/.local/share/nvim/mason/bin/php-cs-fixer",
 						args = {
 							"fix",
 							"--rules=@PSR12",
@@ -125,6 +127,7 @@ return {
 			}
 			vim.lsp.enable("qmlls6")
 			vim.lsp.enable("gopls")
+			vim.lsp.enable("asm_lsp")
 
 			vim.keymap.set(
 				{ "n", "v" },
