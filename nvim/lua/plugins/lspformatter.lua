@@ -78,6 +78,7 @@ return {
 					"rust_analyzer",
 					"html",
 					"gopls",
+					"ts_ls",
 				},
 			})
 		end,
@@ -90,6 +91,7 @@ return {
 		config = function()
 			vim.lsp.enable("lua_ls")
 			vim.lsp.enable("eslint")
+			vim.lsp.enable("ts_ls")
 			vim.lsp.enable("cssls")
 			vim.lsp.config["emmet_language_server"] = {
 				filetypes = { "html", "css", "php", "blade", "javascriptreact", "typescriptreact" },
