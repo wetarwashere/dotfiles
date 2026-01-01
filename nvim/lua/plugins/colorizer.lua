@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("colorizer").setup({
 			"*",
-			html = { name = true },
+			css = { rgb_fn = true, hsl_fn = true },
 		})
 	end,
 }
