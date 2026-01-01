@@ -69,7 +69,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"ts_ls",
+					"eslint",
 					"cssls",
 					"phpactor",
 					"clangd",
@@ -89,7 +89,7 @@ return {
 		},
 		config = function()
 			vim.lsp.enable("lua_ls")
-			vim.lsp.enable("ts_ls")
+			vim.lsp.enable("eslint")
 			vim.lsp.enable("cssls")
 			vim.lsp.config["emmet_language_server"] = {
 				filetypes = { "html", "css", "php", "blade", "javascriptreact", "typescriptreact" },
