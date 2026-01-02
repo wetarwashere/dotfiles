@@ -40,7 +40,7 @@ return {
 				},
 				formatters = {
 					["php-cs-fixer"] = {
-						command = "$HOME/.local/share/nvim/mason/bin/php-cs-fixer",
+						command = "/home/wetar/.local/share/nvim/mason/bin/php-cs-fixer",
 						args = {
 							"fix",
 							"--rules=@PSR12",
