@@ -15,7 +15,9 @@ return {
 
 			require("luasnip.loaders.from_vscode").lazy_load()
 			ls.filetype_extend("javascript", { "javascriptreact" })
+			ls.filetype_extend("javascript", { "html" })
 			ls.filetype_extend("typescript", { "typescriptreact" })
+			ls.filetype_extend("typescript", { "html" })
 		end,
 	},
 	{
