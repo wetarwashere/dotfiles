@@ -22,8 +22,14 @@ return {
 			},
 			sync_install = true,
 			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = true,
+			},
+			indent = {
+				enable = true,
+				disable = { "tsx" },
+			},
 		})
 	end,
 }

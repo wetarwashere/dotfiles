@@ -34,7 +34,7 @@ vim.keymap.set(
 )
 vim.keymap.set({ "n", "v" }, "<C-a>", "^", { silent = true, desc = "Move to the first char of the line" })
 
--- Menu
+-- Menu mouse configs
 vim.keymap.set("n", "<C-m>", function()
 	local filetype = vim.bo.filetype
 	local options = filetype == "neo-tree" and "neo-tree" or "default"
