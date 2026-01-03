@@ -100,13 +100,6 @@ layer-rule {
 window-rule {
     match app-id=r#"firefox$"#
     open-maximized true
-
-    border {
-        width 3
-        active-color "#ffffff"
-        inactive-color "#606060"
-        urgent-color "#ffffff"
-    }
 }
 
 window-rule {
