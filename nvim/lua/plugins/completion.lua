@@ -11,10 +11,12 @@ return {
 		"L3MON4D3/LuaSnip",
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
+			require("luasnip.loaders.from_vscode").lazy_load({ "javascriptreact", "typescriptreact", "html" })
 
 			require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+			require("luasnip").filetype_extend("javascript", { "html" })
 			require("luasnip").filetype_extend("typescript", { "typescriptreact" })
+			require("luasnip").filetype_extend("typescript", { "html" })
 		end,
 	},
 	{
@@ -60,6 +62,10 @@ return {
 				["<C-n>"] = { "select_next", "fallback" },
 				["<C-up>"] = { "scroll_documentation_up", "fallback" },
 				["<C-down>"] = { "scroll_documentation_down", "fallback" },
+			},
+
+			snippets = {
+				preset = "luasnip",
 			},
 
 			appearance = {
