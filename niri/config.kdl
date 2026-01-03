@@ -70,10 +70,10 @@ hotkey-overlay {
 }
 
 screenshot-path null
-spawn-sh-at-startup "swww-daemon -n overlay"
-spawn-sh-at-startup "swww img --transition-fps 60 --transition-type grow --transition-pos center --transition-duration 1 -n overlay ~/.config/niri/assets/images/Teio.png"
 spawn-sh-at-startup "swww-daemon"
-spawn-sh-at-startup "~/.config/niri/scripts/wallpaper.sh --check"
+spawn-sh-at-startup "~/.config/niri/scripts/wallpaper.sh --start"
+spawn-sh-at-startup "swww-daemon -n overlay"
+spawn-sh-at-startup "swww img --transition-fps 60 --transition-type grow --transition-pos center --transition-duration 1 -n overlay ~/.config/niri/assets/Blackhole.gif"
 spawn-sh-at-startup "qs -c ~/.config/quickshell/wbar-niri"
 
 animations {
@@ -102,6 +102,31 @@ window-rule {
     open-maximized true
 
     border {
+        width 3
+        active-color "#ffffff"
+        inactive-color "#606060"
+        urgent-color "#ffffff"
+    }
+}
+
+window-rule {
+    match app-id=r#"xdg-desktop-portal-gtk$"#
+    open-floating true
+
+    border {
+        width 3
+        active-color "#ffffff"
+        inactive-color "#606060"
+        urgent-color "#ffffff"
+    }
+}
+
+window-rule {
+    match app-id=r#"Xdg-desktop-portal-gtk$"#
+    open-floating true
+
+    border {
+        off
         width 3
         active-color "#ffffff"
         inactive-color "#606060"

@@ -37,7 +37,7 @@ case "$1" in
     "--randomize")
         wallpaper_random
         ;;
-    "--check")
+    "--start")
         load_wallpaper
         ;;
     *)
