@@ -94,7 +94,7 @@ return {
 			vim.lsp.enable("ts_ls")
 			vim.lsp.enable("cssls")
 			vim.lsp.config["emmet_language_server"] = {
-				filetypes = { "html", "css", "php", "blade", "javascriptreact", "typescriptreact" },
+				filetypes = { "html", "css", "php", "blade", "jsx", "javascript", "typescript" },
 				init_options = {
 					html = {
 						options = {
@@ -107,7 +107,7 @@ return {
 			vim.lsp.config["html"] = {
 				filetypes = { "html", "php", "blade", "htm" },
 				init_options = {
-					configurationSection = { "html", "css", "javascript" },
+					configurationSection = { "html", "css", "typescript", "javascript", "tsx" },
 					embeddedLanguages = {
 						css = true,
 						javascript = true,
@@ -130,7 +130,6 @@ return {
 			vim.lsp.enable("qmlls6")
 			vim.lsp.enable("gopls")
 			vim.lsp.enable("asm_lsp")
-
 			vim.keymap.set(
 				{ "n", "v" },
 				"<leader>ca",

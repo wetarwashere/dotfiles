@@ -50,7 +50,7 @@ return {
 				},
 				indent = {
 					enable = true,
-					disable = { "tsx" },
+					disable = { "tsx", "javascript", "typescript" },
 				},
 			})
 		end,
