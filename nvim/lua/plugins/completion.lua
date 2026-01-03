@@ -11,13 +11,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
-			local ls = require("luasnip")
-
 			require("luasnip.loaders.from_vscode").lazy_load()
-			ls.filetype_extend("javascript", { "javascriptreact" })
-			ls.filetype_extend("javascript", { "html" })
-			ls.filetype_extend("typescript", { "typescriptreact" })
-			ls.filetype_extend("typescript", { "html" })
 		end,
 	},
 	{
