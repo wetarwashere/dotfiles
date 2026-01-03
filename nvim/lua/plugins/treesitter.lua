@@ -7,6 +7,15 @@ return {
 		},
 	},
 	{
+		"windwp/nvim-ts-autotag",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("nvim-ts-autotag").setup({})
+		end,
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
