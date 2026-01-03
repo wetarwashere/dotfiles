@@ -1,6 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
+	lazy = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
@@ -54,6 +55,7 @@ return {
 				},
 			},
 		})
+
 		vim.keymap.set(
 			"n",
 			"<C-e>",
@@ -61,4 +63,5 @@ return {
 			{ silent = true, desc = "Toggle file explorer" }
 		)
 	end,
+	event = "VimEnter",
 }

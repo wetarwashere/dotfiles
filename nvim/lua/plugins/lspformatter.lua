@@ -90,48 +90,50 @@ return {
 			"saghen/blink.cmp",
 		},
 		config = function()
-			vim.lsp.enable("lua_ls")
-			vim.lsp.enable("eslint")
-			vim.lsp.enable("ts_ls")
-			vim.lsp.enable("cssls")
-			vim.lsp.config["emmet_language_server"] = {
-				filetypes = { "html", "css", "php", "blade", "jsx", "javascript", "typescript" },
-				init_options = {
-					html = {
-						options = {
-							["bem.enabled"] = true,
+			local lspconfig = vim.lsp
+			local servers = {
+				lua_ls = { filetypes = { "lua" } },
+				eslint = { filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
+				ts_ls = { filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } },
+				cssls = { filetypes = { "css", "scss", "less" } },
+				emmet_language_server = {
+					filetypes = { "html", "css", "php", "blade", "jsx", "javascript", "typescript" },
+					init_options = {
+						html = {
+							options = {
+								["bem.enabled"] = true,
+							},
 						},
 					},
 				},
-			}
-			vim.lsp.enable("emmet_language_server")
-			vim.lsp.config["html"] = {
-				filetypes = { "html", "php", "blade", "htm" },
-				init_options = {
-					configurationSection = { "html", "css", "typescript", "javascript", "tsx" },
-					embeddedLanguages = {
-						css = true,
-						javascript = true,
+				html = {
+					filetypes = { "html", "php", "blade", "htm" },
+					init_options = {
+						configurationSection = { "html", "css", "typescript", "javascript", "tsx" },
+						embeddedLanguages = { css = true, javascript = true },
+						provideFormatter = true,
 					},
-					provideFormatter = true,
 				},
+				phpactor = { root_dir = vim.loop.cwd() },
+				clangd = {},
+				pyright = {},
+				rust_analyzer = {},
+				qmlls6 = { cmd = { "qmlls6" }, filetypes = { "qml" } },
+				gopls = {},
+				asm_lsp = {},
+				tailwindcss = {},
 			}
-			vim.lsp.enable("html")
-			vim.lsp.config["phpactor"] = {
-				root_dir = vim.loop.cwd(),
-			}
-			vim.lsp.enable("phpactor")
-			vim.lsp.enable("clangd")
-			vim.lsp.enable("pyright")
-			vim.lsp.enable("rust_analyzer")
-			vim.lsp.config["qmlls6"] = {
-				cmd = { "qmlls6" },
-				filetypes = { "qml" },
-			}
-			vim.lsp.enable("qmlls6")
-			vim.lsp.enable("gopls")
-			vim.lsp.enable("asm_lsp")
-			vim.lsp.enable("tailwindcss")
+
+			for server, config in pairs(servers) do
+				vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+					pattern = config.filetypes or "*",
+					callback = function()
+						if not vim.lsp.get_clients({ name = server })[1] then
+							vim.lsp.enable(server, config)
+						end
+					end,
+				})
+			end
 
 			vim.keymap.set(
 				{ "n", "v" },

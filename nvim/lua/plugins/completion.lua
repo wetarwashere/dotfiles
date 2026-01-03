@@ -3,6 +3,7 @@ return {
 		"saghen/blink.compat",
 		version = "*",
 		lazy = true,
+		event = "InsertEnter",
 		opts = {
 			debug = true,
 		},
@@ -13,14 +14,14 @@ return {
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load({ "javascriptreact", "typescriptreact", "html" })
 
-			require("luasnip").filetype_extend("javascript", { "javascriptreact" })
-			require("luasnip").filetype_extend("javascript", { "html" })
-			require("luasnip").filetype_extend("typescript", { "typescriptreact" })
-			require("luasnip").filetype_extend("typescript", { "html" })
+			require("luasnip").filetype_extend("javascript", { "javascriptreact", "html" })
+			require("luasnip").filetype_extend("typescript", { "typescriptreact", "html" })
 		end,
 	},
 	{
 		"saghen/blink.cmp",
+		lazy = true,
+		event = "InsertEnter",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			"L3MON4D3/LuaSnip",
