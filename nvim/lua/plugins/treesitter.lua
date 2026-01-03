@@ -33,8 +33,6 @@ return {
 				yati = {
 					enable = true,
 					suppress_conflict_warning = true,
-					default_lazy = true,
-					default_fallback = "auto",
 				},
 				highlight = {
 					enable = true,
