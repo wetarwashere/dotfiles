@@ -58,3 +58,8 @@ vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", { silent = true, desc 
 vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>", { silent = true, desc = "Go to the bottom window" })
 vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", { silent = true, desc = "Go to the top window" })
 vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", { silent = true, desc = "Go to the right window" })
+
+-- Snippets expand keymap
+vim.keymap.set({ "i", "s" }, "<C-z>", function()
+	require("luasnip").expand_or_jump()
+end, { silent = true, desc = "Expand hovered snippet" })

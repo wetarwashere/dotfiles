@@ -74,6 +74,7 @@ return {
 					"phpactor",
 					"clangd",
 					"emmet_language_server",
+					"tailwindcss",
 					"pyright",
 					"rust_analyzer",
 					"html",
@@ -130,6 +131,8 @@ return {
 			vim.lsp.enable("qmlls6")
 			vim.lsp.enable("gopls")
 			vim.lsp.enable("asm_lsp")
+			vim.lsp.enable("tailwindcss")
+
 			vim.keymap.set(
 				{ "n", "v" },
 				"<leader>ca",
