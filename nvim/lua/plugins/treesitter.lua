@@ -32,6 +32,7 @@ return {
 				auto_install = true,
 				yati = {
 					enable = true,
+					default_lazy = true,
 					suppress_conflict_warning = true,
 				},
 				highlight = {
